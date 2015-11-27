@@ -22,3 +22,5 @@ To access terminal
 ``
 docker run -i -t hcp/jenkins /bin/bash  
 ``
+
+Docker Host Default: tcp://172.17.0.1:2375
