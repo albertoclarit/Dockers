@@ -26,3 +26,4 @@ docker run -i -t hcp/jenkins /bin/bash
 
 Docker Host Default: tcp://172.17.0.1:2375
 
+http://blog.yohanliyanage.com/2015/05/docker-clean-up-after-yourself/
