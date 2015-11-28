@@ -10,10 +10,7 @@
 ``
 ### To Run
 ``
-docker run -p 8080:8080 -p 50000:50000 -v /var/jenkins:/var/jenkins_home  \
--v /var/run/docker.sock:/var/run/docker.sock \
--v $(which docker):/bin/docker \
--d hcp/jenkins
+docker run  -v /var/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/bin/docker -p 8080:8080 -p 50000:50000 -d hcp/jenkins
 ``
 
 or add --privileged
