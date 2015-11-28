@@ -6,4 +6,4 @@ RUN apt-get update && apt-get install -y maven
 VOLUME /var/run/docker.sock
 VOLUME /bin/docker
 # drop back to the regular jenkins user - good practice
-USER jenkins
+#USER jenkins
