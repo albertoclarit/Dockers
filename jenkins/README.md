@@ -21,7 +21,7 @@ docker run --name hcp/jenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home  
 
 To access terminal
 ``
-docker run -i -t hcp/jenkins /bin/bash  
+docker run -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/bin/docker -i -t hcp/jenkins  /bin/bash  
 ``
 
 Docker Host Default: tcp://172.17.0.1:2375
