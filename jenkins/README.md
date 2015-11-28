@@ -10,9 +10,13 @@
 ``
 ### To Run
 ``
-docker run -p 8080:8080 -p 50000:50000 -v /var/jenkins:/var/jenkins_home hcp/jenkins
+docker run -p 8080:8080 -p 50000:50000 -v /var/jenkins:/var/jenkins_home  \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v $(which docker):/bin/docker \
+-d hcp/jenkins
 ``
 
+or add --privileged
 using volume container
 ``
 docker run --name hcp/jenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home  hcp/jenkins
@@ -24,3 +28,4 @@ docker run -i -t hcp/jenkins /bin/bash
 ``
 
 Docker Host Default: tcp://172.17.0.1:2375
+
