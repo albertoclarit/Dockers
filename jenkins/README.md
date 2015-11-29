@@ -10,13 +10,19 @@
 ``
 ### To Run
 ``
-docker run  -v /var/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/bin/docker -p 8080:8080 -p 50000:50000 -d hcp/jenkins
+docker run  -v /var/jenkins:/var/jenkins_home  -p 8080:8080 -p 50000:50000 -d hcp/jenkins
 ``
 
+### Or You can create and start
+``
+docker create  -v /var/jenkins:/var/jenkins_home  -p 8080:8080 -p 50000:50000 -d -name=hcp_jenkins  hcp/jenkins
+docker start hcp_jenkins
+``
+ if name is not specified, docker will give a random name
 or add --privileged
 using volume container
 ``
-docker run --name hcp/jenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home  hcp/jenkins
+docker run --name hcpjenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home -d hcp/jenkins
 ``
 
 To access terminal
